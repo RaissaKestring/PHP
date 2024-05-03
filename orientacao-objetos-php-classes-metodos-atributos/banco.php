@@ -12,3 +12,5 @@ echo $primeiraConta->recuperarCpfTitular() .PHP_EOL;
 echo $primeiraConta->recuperarSaldo() .PHP_EOL;
 
 $segundaConta = new Conta(cpfTitular:'098.765.432-12', nomeTitular: 'Angela');
+
+echo Conta::recuperarNumeroDeContas();

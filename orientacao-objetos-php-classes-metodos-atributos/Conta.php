@@ -11,18 +11,24 @@ class Conta  {
 
     // classes são formas de bolo, planta de casa, então eu nãodefino os valores desas variáveis na classe, mas sim nos objetos
 
-    // definir dados da conta
+    // definir dados da contaque tenhamos também a validação do CPF, que é mais complexa. Manter todo esse código no construtor provavelmente traria problemas de legibilidade.
+
+
     // atributos de classe: 
     private string $cpfTitular;
     private string $nomeTitular;
     private float $saldo;
+    private static $numeroDeContas = 0;
 
     public function __construct(string $cpfTitular, string $nomeTitular) {
 
         $this->nomeTitular = $nomeTitular;
-        $this->validaNomeTitular($nomeTitular);
+        $this->validarNomeTitular($nomeTitular);
         $this->cpfTitular = $cpfTitular;
         $this->saldo = 0;
+
+        // static: chamado atravez do nome da classe
+        Conta::$numeroDeContas++;
     }
 
     // THIS: referencia membros de uma classe dentro dos métodos dessa classe.
@@ -77,12 +83,18 @@ class Conta  {
         return $this->nomeTitular;
     }
 
-    private function validaNomeTitular(string $nomeTitular) {
+    private function validarNomeTitular(string $nomeTitular) {
 
         if(strlen($nomeTitular) < 5) {
             echo "Nome precisa ter pelo menos 5 caracteres";
             exit();
         }
+    }
+
+    public static function recuperarNumeroDeContas(): int {
+
+        return Conta::$numeroDeContas;
+        // pode ser return static ou self
     }
 
     // não é necessário especificar void para métodos que não retornam valores. Se você omitir o tipo de retorno, o PHP assumirá implicitamente que o método não retorna nada.
