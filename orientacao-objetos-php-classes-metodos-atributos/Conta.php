@@ -15,7 +15,14 @@ class Conta  {
     // atributos de classe: 
     private string $cpfTitular;
     private string $nomeTitular;
-    private float $saldo = 0;
+    private float $saldo;
+
+    public function __construct(string $cpfTitular, string $nomeTitular) {
+
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $nomeTitular;
+        $this->saldo = 0;
+    }
 
     // THIS: referencia membros de uma classe dentro dos métodos dessa classe.
     // altero o valor do saldo que chamou a conta, e não todas 
@@ -59,19 +66,9 @@ class Conta  {
         return $this->saldo;
     }
 
-    public function defineCpfTitular(string $cpf): void {
-
-        $this->cpfTitular;
-    }
-
     public function recuperarCpfTitular(): string {
 
         return $this->cpfTitular;
-    }
-
-    public function defineNomeTitular(string $nome): void {
-
-        $this->nomeTitular = $nome;
     }
 
     public function recuperarNomeTitular(): string {
