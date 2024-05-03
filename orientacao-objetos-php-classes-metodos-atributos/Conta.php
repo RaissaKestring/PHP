@@ -19,8 +19,9 @@ class Conta  {
 
     public function __construct(string $cpfTitular, string $nomeTitular) {
 
-        $this->cpfTitular = $cpfTitular;
         $this->nomeTitular = $nomeTitular;
+        $this->validaNomeTitular($nomeTitular);
+        $this->cpfTitular = $cpfTitular;
         $this->saldo = 0;
     }
 
@@ -74,6 +75,14 @@ class Conta  {
     public function recuperarNomeTitular(): string {
 
         return $this->nomeTitular;
+    }
+
+    private function validaNomeTitular(string $nomeTitular) {
+
+        if(strlen($nomeTitular) < 5) {
+            echo "Nome precisa ter pelo menos 5 caracteres";
+            exit();
+        }
     }
 
     // não é necessário especificar void para métodos que não retornam valores. Se você omitir o tipo de retorno, o PHP assumirá implicitamente que o método não retorna nada.
