@@ -51,6 +51,34 @@ class Conta  {
         }
     }
 
+    // temos atributos privados, ninguem consegue acessá-los se não for atravez de métodos
+    // então preciso de métodos pra poder acessá-los
+
+    public function recuperarSaldo(): float {
+
+        return $this->saldo;
+    }
+
+    public function defineCpfTitular(string $cpf): void {
+
+        $this->cpfTitular;
+    }
+
+    public function recuperarCpfTitular(): string {
+
+        return $this->cpfTitular;
+    }
+
+    public function defineNomeTitular(string $nome): void {
+
+        $this->nomeTitular = $nome;
+    }
+
+    public function recuperarNomeTitular(): string {
+
+        return $this->nomeTitular;
+    }
+
     // não é necessário especificar void para métodos que não retornam valores. Se você omitir o tipo de retorno, o PHP assumirá implicitamente que o método não retorna nada.
 
 }
