@@ -1,5 +1,21 @@
 <?php
 
+function exibeMensagemLancamento(int $ano): void {
+    if ($ano >= 2022) {
+        echo "Esse filme é um lançamento\n";
+    } else if ($ano >2020 && $ano <= 2022) {
+        echo "Esse filme ainda é novo";
+    } else {
+        echo "Esse filme não é um lançamento\n";
+    }
+}
+ 
+// void significa ausencia 
+
+function incluidoNoPlano(bool $planoPrime, int $anoLancamento) {
+    return $planoPrime || $anoLancamento < 2020;
+}
+
 echo "Bem vindo ao screen match!
 ";
 
@@ -24,16 +40,17 @@ $notaFilme = $somaDeNotas / $quantidadeDeNotas;
 
 $anoLancamento = 2022;
 
-echo "Nome do filme: " . $nomeFilme . "\n";
-echo "Nota do filme: $notaFilme\n";
-
-if ($anoLancamento >= 2022) {
-    echo "Esse filme é um lançamento\n";
-} else if ($anoLancamento >2020 && $anoLancamento <= 2022) {
+if ($anoLancamento > 2022) {
+    echo "Esse filme é um lançamento";
+} elseif($anoLancamento > 2020 && $anoLancamento <= 2022) {
     echo "Esse filme ainda é novo";
 } else {
-    echo "Esse filme não é um lançamento\n";
+    echo "Esse filme não é um lançamento";
 }
+
+
+echo "Nome do filme: " . $nomeFilme . "\n";
+echo "Nota do filme: $notaFilme\n";
 
 $notasParaOFilme = [
     10,
@@ -44,4 +61,10 @@ $notasParaOFilme = [
     6.8
 ];
 
+
+
 var_dump($notasParaOFilme);
+
+incluidoNoPlano("teste", "teste");
+
+min($notas); // pega o menor vlor da array
