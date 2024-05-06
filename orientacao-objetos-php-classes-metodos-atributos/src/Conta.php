@@ -27,6 +27,7 @@ class Conta  {
         $this->saldo = 0;
 
         // static: chamado atravez do nome da classe
+        // A receita em si é como uma classe, e cada bolo que você faz seguindo essa receita é uma instância dessa classe. Agora, se houver uma dica de como pré-aquecer o forno, isso seria algo estático - não importa quantos bolos você faça, essa dica será sempre a mesma para todos eles.
         Conta::$numeroDeContas++;
     }
 
