@@ -31,6 +31,11 @@ class Conta  {
         Conta::$numeroDeContas++;
     }
 
+    public function __destruct() {
+
+        self::$numeroDeContas--;
+    }
+
     // THIS: referencia membros de uma classe dentro dos métodos dessa classe.
     // altero o valor do saldo que chamou a conta, e não todas 
     // funnção dentro de classe: método
