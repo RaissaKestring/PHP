@@ -17,7 +17,7 @@ echo $primeiraConta->recuperarCpfTitular() .PHP_EOL;
 echo $primeiraConta->recuperarSaldo() .PHP_EOL;
 
 $outroEndereco = new Endereco(cidade: 'A', bairro: 'B', rua: 'C', numero: '1D');
-$angela = new Titular(new CPF('098.765.432-12'), 'Angela', $outroEndereco);
+$outra = new Conta(new Titular(new CPF('098.765.432-12'), 'Angela', $outroEndereco));
 $segundaConta = new Conta($angela);
 
 echo Conta::recuperarNumeroDeContas();
