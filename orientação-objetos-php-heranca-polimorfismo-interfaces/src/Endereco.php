@@ -20,17 +20,17 @@
         return $this->cidade;
     }
 
-    public function getBairro(): string
+    public function recuperarBairro(): string
     {
         return $this->bairro;
     }
 
-    public function getRua(): string
+    public function recuperarRua(): string
     {
         return $this->rua;
     }
 
-    public function getNumero(): string
+    public function recuperarNumero(): string
     {
         return $this->numero;
     }

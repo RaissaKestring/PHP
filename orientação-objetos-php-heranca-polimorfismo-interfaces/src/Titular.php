@@ -4,8 +4,9 @@ class Titular {
 
     private CPF $cpf;
     private string $nome;
+    private Endereco $endereco;
 
-    public function __construct(CPF $cpf, string $nome) {
+    public function __construct(CPF $cpf, string $nome, Endereco $Endereco) {
 
         $this->cpf = $cpf;
         $this->nome = $nome;
@@ -29,5 +30,10 @@ class Titular {
             echo "Nome precisa ter pelo menos 5 caracteres";
             exit();
         }
+    }
+
+    public function recuperarEndereco(): Endereco {
+
+        return $this->endereco;
     }
 }
