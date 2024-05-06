@@ -15,18 +15,15 @@ class Conta  {
 
 
     // atributos de classe: 
-    private string $cpfTitular;
-    private string $nomeTitular;
+    private string $Titular;
     private float $saldo;
     private static $numeroDeContas = 0;
 
     // método construtor: é chamado automaticamente sempre que um novo objeto daquela classe é criado. O método construtor da classe Conta recebe o CPF e o nome do titular como parâmetros e inicializa esses valores juntamente com o saldo da conta. 
 
-    public function __construct(string $cpfTitular, string $nomeTitular) {
+    public function __construct(Titular $titular) {
 
-        $this->nomeTitular = $nomeTitular;
-        $this->validarNomeTitular($nomeTitular);
-        $this->cpfTitular = $cpfTitular;
+        $this->titular = $titular;
         $this->saldo = 0;
 
         // static: chamado atravez do nome da classe
@@ -83,22 +80,14 @@ class Conta  {
         return $this->saldo;
     }
 
-    public function recuperarCpfTitular(): string {
-
-        return $this->cpfTitular;
-    }
-
     public function recuperarNomeTitular(): string {
 
-        return $this->nomeTitular;
+        return $this->titular->recuperarNome();
     }
 
-    private function validarNomeTitular(string $nomeTitular) {
+    public function recuperarCpfTitular(): string {
 
-        if(strlen($nomeTitular) < 5) {
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
-        }
+        return $this->titular->recuperarCpf();
     }
 
     public static function recuperarNumeroDeContas(): int {
