@@ -20,6 +20,8 @@ class Conta  {
     private float $saldo;
     private static $numeroDeContas = 0;
 
+    // método construtor: é chamado automaticamente sempre que um novo objeto daquela classe é criado. O método construtor da classe Conta recebe o CPF e o nome do titular como parâmetros e inicializa esses valores juntamente com o saldo da conta. 
+
     public function __construct(string $cpfTitular, string $nomeTitular) {
 
         $this->nomeTitular = $nomeTitular;
@@ -31,6 +33,9 @@ class Conta  {
         Conta::$numeroDeContas++;
     }
 
+    //não é mais referenciado por nenhum código do programa e está sendo removido da memória.
+    //Isso sugere que essa propriedade está sendo usada para acompanhar o número total de objetos da classe Conta criados. Então, sempre que um objeto Conta é destruído, o método destrutor é chamado automaticamente e o número total de contas é atualizado.
+    
     public function __destruct() {
 
         self::$numeroDeContas--;
