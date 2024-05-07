@@ -17,7 +17,7 @@ class Conta  {
 
 
     // atributos de classe: 
-    private $Titular;
+    private $titular;
     private float $saldo;
     private static $numeroDeContas = 0;
 
@@ -67,12 +67,11 @@ class Conta  {
     public function transferir(float $valorATransferir, Conta $contaDestino): void {
         if ($valorATransferir > $this->saldo) {
             echo "Saldo indisponivel";
-        return;
+        return; }
             
         $this->sacar($valorATransferir);
         $contaDestino->depositar($valorATransferir);
 
-        }
     }
 
     // temos atributos privados, ninguem consegue acessá-los se não for atravez de métodos

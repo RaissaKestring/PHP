@@ -2,6 +2,9 @@
 
 namespace src\Banco\Modelo\Conta;
 
+use src\Banco\Modelo\Pessoa;
+use src\Banco\Modelo\Cpf;
+use src\Banco\Modelo\Endereco;
 // Titular é uma pessoa
 class Titular extends Pessoa {
 
