@@ -1,6 +1,6 @@
 <?php
 
-class Titular {
+class Titular extends Pessoa {
 
     private CPF $cpf;
     private string $nome;
@@ -10,26 +10,7 @@ class Titular {
 
         $this->cpf = $cpf;
         $this->nome = $nome;
-        $this->validarNomeTitular($nome);
         
-    }
-
-    public function recuperarCpf():string {
-
-        return $this->cpf->recuperarNumero();
-    }
-
-    public function recuperarNome():string {
-
-        return $this->nome;
-    }
-
-    private function validarNomeTitular(string $nomeTitular) {
-
-        if(strlen($nomeTitular) < 5) {
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
-        }
     }
 
     public function recuperarEndereco(): Endereco {
