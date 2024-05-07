@@ -1,5 +1,7 @@
 <?php
 
+namespace Modelo\Conta;
+
 // Titular é uma pessoa
 class Titular extends Pessoa {
 

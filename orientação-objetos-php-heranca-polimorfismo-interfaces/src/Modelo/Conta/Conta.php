@@ -1,5 +1,7 @@
 <?php
 
+namespace Modelo\Conta;
+
 // classe que a partir dela crio objetos e mont meu sistema
 // deixa de ser orientada a funções, e passa a ser por objetos
 // hierarquia: classe -> atributos, objeto -> valores
