@@ -1,15 +1,16 @@
 <?php
 
+// Titular é uma pessoa
 class Titular extends Pessoa {
 
-    private CPF $cpf;
-    private string $nome;
     private Endereco $endereco;
 
     public function __construct(CPF $cpf, string $nome, Endereco $Endereco) {
 
-        $this->cpf = $cpf;
-        $this->nome = $nome;
+        // acessa a classe mãe, classe que está sendo herdada, que nesse caso, é Pessoa
+        // acessa os atributos passados como parâmetro (nome e cpf), dados como protected em Pessoa.
+        parent:: __construct($nome, $cpf);
+        $this->endereco = $endereco;
         
     }
 
