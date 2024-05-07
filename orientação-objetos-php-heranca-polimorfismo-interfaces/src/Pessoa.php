@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Banco\Modelo;
+
 class Pessoa {
 
     // protected: permito o acesso na classe atual, e nas classes filhas.

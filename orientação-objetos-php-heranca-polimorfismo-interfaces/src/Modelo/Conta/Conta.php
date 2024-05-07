@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelo\Conta;
+namespace src\Banco\Modelo\Conta;
 
 // classe que a partir dela crio objetos e mont meu sistema
 // deixa de ser orientada a funções, e passa a ser por objetos

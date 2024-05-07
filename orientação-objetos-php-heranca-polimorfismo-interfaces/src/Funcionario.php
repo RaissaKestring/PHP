@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelo;
+namespace src\Banco\Modelo;
 
 // Funcionario é uma pessoa
 class Funcionario extends Pessoa {
