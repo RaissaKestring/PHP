@@ -8,7 +8,7 @@ class Pessoa {
     protected $nome;
     private $cpf;
 
-    public function __function(string $nome, CPF $cpf) {
+    public function __construct(string $nome, cpf $cpf) {
 
         $this->validarNomeTitular($nome);
         $this->nome = $nome;

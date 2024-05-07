@@ -94,7 +94,7 @@ class Conta  {
 
     public static function recuperarNumeroDeContas(): int {
 
-        return Conta::$numeroDeContas;
+        return self::$numeroDeContas;
         // pode ser return static ou self
     }
 
