@@ -1,0 +1,44 @@
+<?php
+
+namespace Alura\Banco\Modelo\Funcionario;
+
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Pessoa;
+
+// Funcionario é uma pessoa
+abstract class Funcionario extends Pessoa
+{
+    private $salario;
+
+    public function __construct(string $nome, CPF $cpf, float $salario)
+    {
+        // acessa a classe mãe, classe que está sendo herdada, que nesse caso, é Pessoa
+        // acessa os atributos passados como parâmetro (nome e cpf), dados como protected em Pessoa.
+        parent::__construct($nome, $cpf);
+        // $this->cargo = $cargo;
+        $this->salario = $salario;
+    }
+
+    public function alteraNome(string $nome): void
+    {
+        $this->validaNome($nome);
+        $this->nome = $nome;
+    }
+
+    public function recebeAumento(float $valorAumento): void
+    {
+        if ($valorAumento < 0) {
+            echo "Aumento deve ser positivo";
+            return;
+        }
+
+        $this->salario += $valorAumento;
+    }
+
+    public function recuperaSalario(): float
+    {
+        return $this->salario;
+    }
+
+    abstract public function calculaBonificacao(): float;
+}

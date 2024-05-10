@@ -1,17 +1,17 @@
 <?php
 
-namespace src\Banco\Modelo\Conta;
+namespace Alura\Banco\Modelo\Conta;
 
-use src\Banco\Modelo\Pessoa;
-use src\Banco\Modelo\Cpf;
-use src\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\Autenticavel;
+use Alura\Banco\Modelo\Pessoa;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Endereco;
 
-// Titular é uma pessoa
-class Titular extends Pessoa
+class Titular extends Pessoa implements Autenticavel
 {
     private $endereco;
 
-    public function __construct(Cpf $cpf, string $nome, Endereco $endereco)
+    public function __construct(CPF $cpf, string $nome, Endereco $endereco)
     {
         parent::__construct($nome, $cpf);
         $this->endereco = $endereco;
@@ -21,5 +21,9 @@ class Titular extends Pessoa
     {
         return $this->endereco;
     }
-}
 
+    public function podeAutenticar(string $senha): bool
+    {
+        return $senha === 'abcd';
+    }
+}
